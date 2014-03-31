@@ -4,6 +4,10 @@
 
 angular.module('busquedaApp.controllers', []);
 
+angular.module('busquedaApp.controllers').controller('InicioCtrl', ['$scope', function($scope) {
+
+}]);
+
 angular.module('busquedaApp.controllers').controller('BusquedaPlanitosCtrl', ['$scope', function($scope) {
 $scope.planitos = [
 {'descripcion': 'Dibujos Animados - Gordi saltando la soga',
@@ -19,16 +23,38 @@ $scope.planitos = [
 
 angular.module('busquedaApp.controllers').controller('BusquedaHistorietasCtrl', ['$scope', function($scope) {
 
-$scope.historietas = [
+var historietas = [
 {'nombre': 'Problemas en el cosmodromo',
 'numero': '145',
  'personaje': 'Bicho y gordi' },
 {'nombre': 'Hombres de marte',
 'numero': '345',
  'personaje': 'Resorte y el profe'
+},
+{'nombre': 'El resupermercado',
+'numero': '294',
+ 'personaje': 'Bicho y gordi' },
+{'nombre': 'Probando el patasmovil',
+'numero': '245',
+ 'personaje': 'Resorte y el profe'
+},
+{'nombre': 'Mudanzas conflictivas',
+'numero': '443',
+ 'personaje': 'Bicho y gordi' },
+{'nombre': 'Robotina',
+'numero': '145',
+ 'personaje': 'Resorte y el profe'
 }
+
 ];
 
+$scope.historietas = historietas.splice(0,5);
+
+}]);
+angular.module('busquedaApp.controllers').controller('MiColeccionCtrl', ['$scope', function($scope) {
+
+}]);
+angular.module('busquedaApp.controllers').controller('OtrasColeccionesCtrl', ['$scope', function($scope) {
 
 }]);
 

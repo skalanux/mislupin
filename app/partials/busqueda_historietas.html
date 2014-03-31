@@ -6,6 +6,7 @@
       Buscar: <input ng-model="query">
       Personaje:
       <select ng-model="personajeProp">
+        <option value="">Cualquiera</option>
         <option value="Bicho y gordi">Bicho y gordi</option>
         <option value="Resorte y el profe">Resorte y el profe</option>
       </select>
@@ -15,7 +16,7 @@
       <!--Body content-->
       <ul class="historietas">
         <li ng-repeat="historieta in historietas | filter:query |filter:personajeProp" class="thumbnail">
-        {{ historieta.nombre }} {{ historieta.numero }}
+        {{ historieta.personaje }}: {{ historieta.nombre }} #{{ historieta.numero }}
         </li>
       </ul>
 
