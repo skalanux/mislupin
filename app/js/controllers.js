@@ -51,6 +51,10 @@ var historietas = [
 $scope.historietas = historietas.splice(0,5);
 
 }]);
+angular.module('busquedaApp.controllers').controller('VerNumeroCtrl', ['$scope', function($scope) {
+
+}]);
+
 angular.module('busquedaApp.controllers').controller('MiColeccionCtrl', ['$scope', function($scope) {
 
 }]);
