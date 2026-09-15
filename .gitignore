@@ -58,3 +58,13 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+# Secrets
+.env
+
+# Database data directory (restore from mislupins.tar.gz)
+db/
+
+# Backup / duplicate artifacts
+mislupins/
+*.tar.gz
+
