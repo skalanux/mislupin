@@ -1,0 +1,40 @@
+version: '3.5'
+
+services:
+  web:
+    build: .
+    command: php -d short_open_tag=On -S 0.0.0.0:80 -t /app
+    mem_limit: 128m
+    links:
+        - db
+    env_file:
+        - .env
+    ports:
+        - "80"
+    volumes:
+      - ./app:/app
+    restart: always
+    labels:
+      - "traefik.http.routers.mislupins.rule=Host(`mislupins.com.ar`)"
+      - "traefik.http.routers.mislupins.tls=true"
+      - "traefik.http.routers.mislupins.tls.certresolver=letsencrypt"
+      - "traefik.docker.network=proxy"
+      - "traefik.enable=true"
+    networks:
+#      - proxy
+      - default
+  db:
+    image: mysql:5.5
+    mem_limit: 256m
+    volumes:
+      - "./db:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASS:-mislupinsroot}"
+      MYSQL_USER: "${DB_USER:-mislupins}"
+      MYSQL_PASSWORD: "${DB_PASS:-mislupins}"
+      MYSQL_DATABASE: "${DB_NAME:-mislupins}"
+
+#networks:
+#   proxy:
+#     external: true
+

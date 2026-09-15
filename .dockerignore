@@ -1,0 +1,7 @@
+.git
+.env
+db/
+mislupins.tar.gz
+README.md
+LICENSE
+docker-compose.yml
